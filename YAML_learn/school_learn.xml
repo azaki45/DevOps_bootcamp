@@ -1,0 +1,23 @@
+<!-- Data to store: -->
+
+<!-- School > name -->
+       <!-- > principal -->
+       <!-- > students  > student1 > roll -->
+                              <!-- > name -->
+                              <!-- > marks -->
+                   <!-- and so on -->
+
+
+<?xml version="1.0" encoding="UTF-8">
+<School name="KSMS" principal="Nandini Shukla">
+    <Students>
+        <Student>
+            <rno>01</rno>
+            <name>"Aatir"</name>
+            <marks>98.2</marks>
+        </Student>
+    </Students>
+</School>
+
+
+<!-- for JSON files: {} are used for single entities and [] are used for collection of entities -->

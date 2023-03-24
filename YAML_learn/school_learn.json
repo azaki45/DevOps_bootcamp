@@ -1,0 +1,17 @@
+{
+    "School": [
+        {
+            "name": "KSMS",
+            "principal": "Nandini Shukla",
+            "Students": [
+                {
+                    "name": "Aatir",
+                    "roll": 1,
+                    "marks": 98.2
+                }
+            ]
+        }
+    ]
+}
+
+

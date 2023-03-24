@@ -1,0 +1,44 @@
+# YAML is a data serialization language which is used to convert (objects + code) as well as documents into a human readable file which
+#  can be used to transmit them to downstream programs.
+
+#  YAML is a collection of one or more documents or data bolcks separated by <---> and the end is signified by <...> 
+
+#  Indentation is important and is taken care of with spaces not tabs. It is also case sensitive.
+
+# .yml or .yaml extension is valid, .yaml is widely used and preferred.
+
+
+# Example of key-value pairs:
+"apple" : "I am a red fruit"
+1 : "This is Aatir's roll number"
+--- 
+# End of document 1.
+
+# Example of lists:
+- apple
+- mango
+- banana
+- Apple
+---
+# End of document 2.
+
+#Example of block:
+cities:
+ - new delhi
+ - mumbai
+ - kolkata
+ - jamshedpur
+---
+# End of document 3.
+
+#Block in a single line:
+cities: [new delhi, mumbai, kolkata, jamshedpur]
+---
+
+# Key-value pairs in a single line:
+{mango: "yellow fruit", apple: "red fruit"}
+---
+
+
+...
+# End of the YAML file.

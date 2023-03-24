@@ -1,0 +1,84 @@
+# Sequence type data:
+student: !!seq
+ - marks
+ - name
+ - roll_no
+
+# Can be written in this manner as well:
+student: [marks, name, roll_no]
+
+# Some of thee keys of the seq will be empty, This is known as a aprse seq:
+sparse seq:
+ - hey
+ - how
+ -
+ - Null
+ - sup
+
+# Nested Seqence:
+-
+ - mango
+ - apple
+ - banana
+-
+ - marks
+ - roll_num
+ - date
+
+
+# Key: Value pairs are called maps:
+!!map
+
+# Nested mappings: map within a map
+name: Aatir Zaki
+role:
+  age: 20
+  job: student
+
+# same as:
+name: Aatir Zaki
+role: { age: 20, job: Student}
+
+
+# Pairs: Keys may have duplicate values
+# !!pairs
+pair example: !!pairs
+ - job: student
+ - job: teacher
+# this will be an array of hashtables
+
+# Same as:
+pair example: !!pairs [job: student, job: teacher]
+
+
+# !!set will allow you to have unique values:
+names: !!set
+ ? Aatir
+ ? Aniket
+ ? Parthiv
+
+# Dictionary !!omap
+People: !!omap
+ - Aatir:
+    name: Aatir Zaki
+    age: 20
+    height: 176
+ - Aniket:
+    name: Aniket Layek
+    age: 18
+    height: 173 
+
+
+# Reusing Some properties using anchors:
+likings: &likes
+  fav fruit: orange
+  dislikes: apricot
+
+person1:
+ name: Aatir Zaki
+ <<: *likes
+
+person2:
+ name: Aniket Layek
+ <<: *likes
+ dislikes: berries # Over writing is allowed.

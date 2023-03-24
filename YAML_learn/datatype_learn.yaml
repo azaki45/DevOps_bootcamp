@@ -1,0 +1,58 @@
+# String variables
+
+myself: Aatir Zaki
+fruit: "orange"
+job: "Corporate R&D Head"
+
+# New lines are read as separate lines
+
+# Hence, this is invalid:
+bio: Assalamoalaikum my name is Aatir Zaki.
+I am passionate about Robotics.
+
+# this is valid, Two lines of String input.
+Bio: |
+Assalamoalaikum my name is Aatir Zaki.
+I am passionate about Robotics.
+
+# Writing a single line in multible lines:
+message: >
+this will
+all be
+in one single line.
+
+# The above is same as:
+message: this will all be in one single line.
+
+# YAML automatically detects the datatypes but they can be specified as well:
+
+number: 1234 #int
+marks: 98.2 #float
+CGPA: 9.3 # float
+booleanValue: No # n, N, false, False, FALSE
+# same for true -> yes, y, Y, etc.
+
+#specify the type:
+zero: !!int 0
+positiveNum: !!int 1
+negativeNum: !!int -1
+binaryNum: !!int 0b11001
+ocatalNum: !!int 06574
+hexa: !!int 0x45
+commaValue: !!int +540_000 #540,000
+
+
+# Floating point numbers:
+marks: !!float 98.2
+infinite: !!float .inf
+not a num: .nan
+
+
+# null
+surname: !!null Null # or null Null ~
+~: this is a null key
+
+# Dates and time in YAML:
+date: 24-03-2023 #if no time is added YAML assumes the UTC timezone.
+
+...
