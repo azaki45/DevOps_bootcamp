@@ -22,3 +22,9 @@
 --> Open Container Initiative: Rules and specifications for containers. (Read more on this)
 
 --> docker run -it : here -it is interactive environment.
+
+--> Docker images are built in layers, every image is a collection of some immutable files called layers. This is because several images have same dependencies, do downloading that particular dependency every time a new image is pulled from the docker hub does not make sense. Hence, download the layer once and use it for all the images that require it.
+
+--> Link to the blog: https://blog.wemakedevs.org/getting-started-with-docker#heading-dockerfile-example
+
+--> Read more abour the Docker architecture, shim, runc, containerd and docker daemon.
