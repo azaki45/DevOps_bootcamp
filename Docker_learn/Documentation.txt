@@ -1,6 +1,24 @@
-Docker is a tool that allows working with different contianers to run multiple applications on the same server and operating system.
+--> Docker is a tool that allows working with different contianers to run multiple applications on the same server and operating system.
 
-Components of a container:
-  1. Runtime:
-    a. Run c - It is the low level runtime which takes care of start and stop of a docker container.
-    b. Containerd - This is a high level runtime which oversees Run c.
+--> Container uses a client server architecture.
+
+--> Components of a container:
+      1. Runtime:
+        a. Run c - It is the low level runtime which takes care of start and stop of a docker container.
+        b. Containerd - This is a high level runtime which oversees Run c. It is also used in Kubernetes        runtime.
+        c. etc..
+  
+      2. Engine: It contains the container server and daemon. The dockeer CLI accepts the commands from the client(us) and then the daemon sends it to the server to extract the response for the client.
+  
+      3. Orchestration: It allows us to manage containers which manage tasks such as version control, etc. Kubernetes is one of the most popular orchestration tools.
+
+
+--> Docker file run--> Docker image 
+    Docker image run --> Docker Container.
+
+--> A container is a running instance of an image and the docker file contains the instructions to create the image.
+
+
+--> Open Container Initiative: Rules and specifications for containers. (Read more on this)
+
+--> docker run -it : here -it is interactive environment.
