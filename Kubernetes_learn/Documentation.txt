@@ -1,2 +1,54 @@
 Intro to Kubernetes:
 
+--> Configuration Management:
+    1. Changes cannot be made while runtime
+    2. Adds immutability
+    3. Offers reliability and security
+    
+--> Monolithic Applications: Frontend, Backend, chat messenger, database, networking } all running in one container, bundled as a single application. (not a very good design)
+
+--> Microservices: Frontend, Backend, chat messenger, database, networking } all deployed as individual applications, i.e, in different containers. Hence, individual modifications made easier. Helps with fault isolation.
+
+--> Orchestrators: Helps in deploying and managing containers dynamically.
+    1. Deploy                    |
+    2. Zero-downtime updates     |  These are properties of cloud native applications as well. (Read more)
+    3. Scale                     |
+    4. Heal Containers           |
+    
+ --> Kubernetes is a container orchestrator + much more.
+ 
+ --> Google made Kubernetes(K8S) open source in 2014 and donated it to CNCF. 
+ 
+ --> K8S Cluster: Control Plane + Nodes(VMs)
+    1. Control Plane was earlier known as master node.
+    2. Nodes can be thought of as VMs or servers.
+    3. Control plane manages the worker nodes.
+    4. Kube CTL : K8S command line tool.
+    5. Declarative way and Imperative way (Read)
+    6. Control Plane:
+       a. etcd: Database that holds all the information about the cluster.
+       b. API server: Any interaction with the control Plane will happen through it. available on httpe/443
+       c. Controller Manger: Manages the desired state, current state, differences, make the changes.
+       d. Scheduler: Assigns work to worker nodes if some task is requested.
+    
+    7. Worker node: 
+       a. kubelet: It listenes to the API server regarding assigning work to the containers.
+       b. container runtime: containerd is the container runtime for K8S.
+       c. kube-proxy: It is responsible for networking, provides IP address to nodes.
+    
+ --> K8S Pod: It is a scheduling unit in K8S.
+ 
+ --> Steps:
+     1. Create application in microservices.
+     2. Containerize it
+     3. Put container in Pods.
+     4. Deploy these Pods to controllers.
+     
+ --> K8S DNS (Read more)
+ 
+ --> Installation:
+     1. Kubectl
+     2. minikube
+     3. kubeadm (optional)
+     4. Cloud Provider : CIVO (recommended), can work with aws as well (Not required for learning basics, minikube is fine)     
+     
