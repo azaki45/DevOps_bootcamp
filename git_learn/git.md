@@ -34,5 +34,39 @@ mosify.
 * '''$ git commit''' : Commits the changes.
 * '''$ git status''' : The main tool used to determine which files are in which state.
 * git add is a multilpurpose command. It is used to begin tracking new files, to stage modified files, and to marking merge-conflicted files as resolved.
+* For viewing a shorter status, we use '''$ git status -s'''.
+    Sample output : '''
+                     $ git status -s
+                     M README
+                     MM Rakefile
+                     A lib/git.rb
+                     M lib/simple git.rb
+                     ?? LICENSE.txt
+                     '''
+    New files that aren’t tracked have a ?? next to them, new files that have been added to the staging
+    area have an A, modified files have an M and so on. There are two columns to the output — the left-
+    hand column indicates the status of the staging area and the right-hand column indicates the status
+    of the working tree. So for example in that output, the README file is modified in the working
+    directory but not yet staged, while the lib/simplegit.rb file is modified and staged. The Rakefile
+    was modified, staged and then modified again, so there are changes to it that are both staged and
+    unstaged.
+  
+### Ignoring Files:
+  * Create a .gitignore file within which we decide which file types or directories to ignore while tracking     them.
+  * Refer pro-git page 32.
+  * [.gitignore file examples](https://github.com/github/gitignore)
+  * use ''' man gitignore''' for more details if needed.
+ 
+### Viewing our staged and unstaged changes:
+  * '''git diff''' this command is used to answer two questions:
+      1. What have we changes but nit staged yet?
+      2. What have we staged that we are about to commit?
+      git diff shows the exact lines added and removed. This is what makes it different form git status.
+  * Note: git diff by itself doesn't show all changes made since your last commit, only changes that re still     unstaged. If you've staged all of your changes, git diff will give us no output.
+  * git diff --staged : This command compares our staged changes to our last commit. This helps us to see         what have we staged that will go into our next commit.
+  * Read on git difftool. Run '''gitdifftool --tool-help'''.
+  
+### Committing our changes:
+  * 
   
   
