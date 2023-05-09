@@ -10,8 +10,9 @@
 * Modified means that you have changed the file but have not committed it to your database yet.
 * Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
 * Committed means that the data is safely stored in your local database.
-* The three main sections of a Git project are: Working tree, the staging area, and the Git directory. ![git](DevOps_bootcamp/git_learn/git.png)
-* The working tree : A single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for us to use or mosify.
+* The three main sections of a Git project are: Working tree, the staging area, and the Git directory. ![git](https://user-images.githubusercontent.com/95584904/237024966-6e4e52c7-e2c6-43fc-b242-7dbefc27a037.png)
+* The working tree : A single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for us to use or 
+mosify.
 * The staging area is a file, generally contained in our Git directory, that sotres information about what will go into our next commit. Its technical name in Git parlance is "index".
 * The Git directory is where Git stores the metadata and obejct database for a project. This is the most important part of Git, and it is what is copied when we clone a repo form another computer.
 
