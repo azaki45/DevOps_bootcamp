@@ -18,31 +18,31 @@ mosify.
 
 ### First-time Git Setup:
 * Git comes with a tool called git config that lets us get and set configuration variables that control all aspect of how Git looks and operates. These variable can be stored in three different places:
-  1. '''[path]/etc/gitconfig''' file: Contains values applied to every user on the system and all their repositories. If passed the option '''--system''' to '''git config''', it reads and writes from this file specifically. Because this is a system configuration file, one would need admin or superuser priviledge to make changes to it.
-  2. '''~/.gitconfig''' or '''~/.config/git/config file: Values specific personnaly to the user. One can make Git read and write to this file specifically by passing the '''--global''' option, and this effects all of the repositoris we work on our system.
-  3. '''config''' file in the Git directory (that is, .git/config) of whatever repo we're currently using: Specific to that single repo. We can force Git to read from and write to this file with the '''--local''' option, but that is in fact tbe default.
+  1. ```[path]/etc/gitconfig``` file: Contains values applied to every user on the system and all their repositories. If passed the option ```--system``` to ```git config```, it reads and writes from this file specifically. Because this is a system configuration file, one would need admin or superuser priviledge to make changes to it.
+  2. ```~/.gitconfig``` or ```~/.config/git/config``` file: Values specific personnaly to the user. One can make Git read and write to this file specifically by passing the '''--global''' option, and this effects all of the repositoris we work on our system.
+  3. ```config``` file in the Git directory (that is, .git/config) of whatever repo we're currently using: Specific to that single repo. We can force Git to read from and write to this file with the ```--local``` option, but that is in fact tbe default.
 
-* Each level overrides values in the prev level, so values in '''.git/config''' trump those in '''[path]/etc/gitconfig'''.
-* To view the origin of the config settings : '''$ git config --list --show-origin'''
+* Each level overrides values in the prev level, so values in ```.git/config``` trump those in ```[path]/etc/gitconfig```.
+* To view the origin of the config settings : ```$ git config --list --show-origin```
 * -h as help.
 
 ## Git Basics
 
 ### Important commands:
-* '''$ git init''' : This creates a new subdirectory named .git that contains all of our necessary repo files.
-* '''$ git add <file>''' : Specifies the file that we want to keep a track of. This command takes a path name for either a file or a directory, if a directory, the command adds all th efiles in that directory recursively.
-* '''$ git commit''' : Commits the changes.
-* '''$ git status''' : The main tool used to determine which files are in which state.
+* ```$ git init``` : This creates a new subdirectory named .git that contains all of our necessary repo files.
+* ```$ git add <file>```: Specifies the file that we want to keep a track of. This command takes a path name for either a file or a directory, if a directory, the command adds all th efiles in that directory recursively.
+* ```$ git commit``` : Commits the changes.
+* ```$ git status``` : The main tool used to determine which files are in which state.
 * git add is a multilpurpose command. It is used to begin tracking new files, to stage modified files, and to marking merge-conflicted files as resolved.
-* For viewing a shorter status, we use '''$ git status -s'''.
-    Sample output : '''C                       
+* For viewing a shorter status, we use ```$ git status -s```.
+    Sample output : ```                      
                      $ git status -s
                      M README
                      MM Rakefile
                      A lib/git.rb
                      M lib/simple git.rb
                      ?? LICENSE.txt
-                     '''
+                     ```
     New files that aren’t tracked have a ?? next to them, new files that have been added to the staging
     area have an A, modified files have an M and so on. There are two columns to the output — the left-
     hand column indicates the status of the staging area and the right-hand column indicates the status
@@ -55,16 +55,16 @@ mosify.
   * Create a .gitignore file within which we decide which file types or directories to ignore while tracking     them.
   * Refer pro-git page 32.
   * [.gitignore file examples](https://github.com/github/gitignore)
-  * use ''' man gitignore''' for more details if needed.
+  * use ```man gitignore``` for more details if needed.
  
 ### Viewing our staged and unstaged changes:
-  * '''git diff''' this command is used to answer two questions:
+  * ```git diff``` this command is used to answer two questions:
       1. What have we changes but nit staged yet?
       2. What have we staged that we are about to commit?
       git diff shows the exact lines added and removed. This is what makes it different form git status.
   * Note: git diff by itself doesn't show all changes made since your last commit, only changes that are still unstaged. If you've staged all of your changes, git diff will give us no output.
-  * git diff --staged : This command compares our staged changes to our last commit. This helps us to see what have we staged that will go into our next commit.
-  * Read on git difftool. Run '''gitdifftool --tool-help'''.
+  * ```git diff --staged``` : This command compares our staged changes to our last commit. This helps us to see what have we staged that will go into our next commit.
+  * Read on git difftool. Run ```gitdifftool --tool-help```.
   
 ### Committing our changes:
   * 
