@@ -35,7 +35,7 @@ mosify.
 * '''$ git status''' : The main tool used to determine which files are in which state.
 * git add is a multilpurpose command. It is used to begin tracking new files, to stage modified files, and to marking merge-conflicted files as resolved.
 * For viewing a shorter status, we use '''$ git status -s'''.
-    Sample output : '''
+    Sample output : '''C                       
                      $ git status -s
                      M README
                      MM Rakefile
@@ -62,8 +62,8 @@ mosify.
       1. What have we changes but nit staged yet?
       2. What have we staged that we are about to commit?
       git diff shows the exact lines added and removed. This is what makes it different form git status.
-  * Note: git diff by itself doesn't show all changes made since your last commit, only changes that re still     unstaged. If you've staged all of your changes, git diff will give us no output.
-  * git diff --staged : This command compares our staged changes to our last commit. This helps us to see         what have we staged that will go into our next commit.
+  * Note: git diff by itself doesn't show all changes made since your last commit, only changes that are still unstaged. If you've staged all of your changes, git diff will give us no output.
+  * git diff --staged : This command compares our staged changes to our last commit. This helps us to see what have we staged that will go into our next commit.
   * Read on git difftool. Run '''gitdifftool --tool-help'''.
   
 ### Committing our changes:
