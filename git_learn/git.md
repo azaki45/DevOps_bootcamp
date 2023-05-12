@@ -64,9 +64,56 @@ mosify.
       git diff shows the exact lines added and removed. This is what makes it different form git status.
   * Note: git diff by itself doesn't show all changes made since your last commit, only changes that are still unstaged. If you've staged all of your changes, git diff will give us no output.
   * ```git diff --staged``` : This command compares our staged changes to our last commit. This helps us to see what have we staged that will go into our next commit.
-  * Read on git difftool. Run ```gitdifftool --tool-help```.
+  * Read on git difftool. Run ```git difftool --tool-help```.
   
 ### Committing our changes:
-  * 
-  
-  
+  * ```git commit```: The simplest way to commit. Any file modification not sent to the staging area using ```git add``` will not be included in the snapshot.
+  * On typing ```git commit```, an editor is launched. We can set it to be of our choice using ```git config --global core.editor```. The editor will hold the latest output of the ```git status``` command as the default commit message. We can add our own commit message.
+  * For an even more explicit reminder use ```git commit -v```. This puts the diff of our change in the editor so we can see exactly what changes we're committing.
+  * All this can be done in a single line using ```git commit -m "commit message"```.
+
+### Skipping the Staging Area:
+* We can skip the staging are by using ```git commit -a```. This makes Git automatically stage every file that is already tracked before doing th ecommit, letting us skip the ```git add``` part.
+
+### Removing Files:
+* To remove a file from Git, we remove it from our staging area and then commit.
+* ```git rm``` command does that, it also removes it from our working directory so we don't see it as an untracked file next time around.
+* A simple ```rm``` command will remove it from the working directory and this deletion will be present in the unstages area, whereas using ```git rm``` also adds the deletion to the staged area and is ready for commit.
+* If we accidently missed some file in .gitignore: Use the cache option, ```$ git rm --cached <file/directory names/file-glob patterns>```.
+  ![git1](https://github.com/azaki45/DevOps_bootcamp/assets/95584904/7d518f68-f22c-44c0-b54e-cd2263f943b3)
+
+### Moving Files:
+* ```git mv file_form file_to```: This is equivalent to renaming the file and will be recorded by git as a rename.
+* It is equivalent to :
+```
+$ mv README.md README
+$ git rm README.md
+$ git add README
+```
+
+### Viewing the Commit History:
+The most basic and powerfull command to look back and see what has happened is ```git log```. There are a bunch of variations of this command that can be used.
+![git1](https://github.com/azaki45/DevOps_bootcamp/assets/95584904/65c111b2-d54a-422c-89c7-3e9b005f3a85)
+
+![git2](https://github.com/azaki45/DevOps_bootcamp/assets/95584904/fe71fad7-83c0-4474-acd5-4d513c301a04)
+
+
+### Limitting Log Output:
+* ```git log --since=2.weeks``` : This outputs the list of commits made in the last two weeks.
+* To prevent the display of merge commits whcih typically are'nt very informative, use ```--no-merges```.
+
+![git1](https://github.com/azaki45/DevOps_bootcamp/assets/95584904/019e19e1-5d00-432f-81d5-9c346329ce0f)
+
+### Undoing Things:
+To redo a commit, we make the additional changes, stage them and then commit again using ```git commit --ammend```. This commmand uses the staging area for the commit. This overwrites the previous commit.
+* git reset and git restore: Proceed with caution.
+
+### Working with remotes:
+
+
+
+## Git Branching:
+A branch is a pointer to a certain commit. It is a 41 bytes file (40 characters and 1 new line) SHA-1 checksum.
+## Creating a branch:
+* ```git branch <branch name>``` : Cretes a branch with the given name.
+* ```git checkout <branch name>``` : This moves the HEAD pointer to the newly created branch and we can now work in the new branch and merge our work later when it is the right time.
